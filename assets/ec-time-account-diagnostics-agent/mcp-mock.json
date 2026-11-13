@@ -1,0 +1,580 @@
+{
+  "servers": {
+    "sap-sf-balances": {
+      "mcp_server_name": "sap.mcp/time_off_balances",
+      "description": "MCP server for the time_off_balances service.",
+      "tools": {
+        "GET_rest_timemanagement_absence_v1_timeAccountBalances": {
+          "description": "Gets time accounts of the entered user with their respective balances. If no user is entered, the logged in user is used.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "VACATION",
+                "employeeId": "EMP10012",
+                "bookableQuantity": "12.50",
+                "bookableQuantityUnit": "DAY",
+                "pendingQuantity": "2.00"
+              }
+            ]
+          }
+        },
+        "GET_rest_timemanagement_absence_v1_timeTypeBalances": {
+          "description": "Gets time types of the active user with their respective balances. If specified, only the balances of the main absence time type is returned.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "VACATION",
+                "balance": "12.50",
+                "unit": "DAY"
+              }
+            ]
+          }
+        },
+        "GET_rest_timemanagement_absence_v1_terminationTimeAccountBalance": {
+          "description": "Gets time accounts of the entered user with their respective termination balances. If no user is entered, the logged in user is used.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "balance": "12.50",
+            "unit": "DAY"
+          }
+        }
+      }
+    },
+    "sap-sf-time-off-events": {
+      "mcp_server_name": "sap.mcp/time_off_events",
+      "description": "MCP server for the time_off_events service.",
+      "tools": {
+        "GET_rest_timemanagement_absence_v1_events": {
+          "description": "The API provides a list of events (including active absences, public holidays, and non-working days) for the specified duration (up to a maximum of 12 months). It checks for relevant permissions, such as employee time view and workbench view. When there is no permission for employee time view, absences are excluded from the response. If no workbench view permission, the titles and approval status of absences are masked. The basic requirement is to have the \"Time Off\" or \"Leave of Absence\" feature enabled.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "EVT-001",
+                "employeeId": "EMP10012",
+                "timeType": "VACATION",
+                "startDate": "/Date(1727740800000)/",
+                "quantity": "1.50",
+                "unit": "DAY",
+                "status": "ACCRUAL"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sap-sf-available-time-types": {
+      "mcp_server_name": "sap.mcp/time_off_available_time_types",
+      "description": "MCP server for the time_off_available_time_types service.",
+      "tools": {
+        "GET_rest_timemanagement_absence_v1_availableTimeTypes": {
+          "description": "Gets the available time types for the login user. The list is based on the Time Profile assigned to the user in Job Information.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "VACATION",
+                "name": "Annual Leave",
+                "unit": "DAY"
+              },
+              {
+                "externalCode": "SICKLEAVE",
+                "name": "Sick Leave",
+                "unit": "DAY"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sap-sf-ec-time-off": {
+      "mcp_server_name": "sap.mcp/sfodata",
+      "description": "MCP server for the sfodata service.",
+      "tools": {
+        "get_metadata_sfodata": {
+          "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "externalCode": "mock-001"
+            }
+          }
+        },
+        "batch_for_sfodata": {
+          "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "externalCode": "mock-001"
+            }
+          }
+        },
+        "list_timeaccountpostingrule_for_sfodata": {
+          "description": "Retrieve a list of entities from the TimeAccountPostingRule collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        },
+        "get_timeaccountpostingrule_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the TimeAccountPostingRule collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        },
+        "list_timeaccountdetail_for_sfodata": {
+          "description": "Retrieve a list of entities from the TimeAccountDetail collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        },
+        "create_timeaccountdetail_for_sfodata": {
+          "description": "Create a new instance of the TimeAccountDetail EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "externalCode": "ADJ-001",
+              "bookingAmount": "1.50",
+              "bookingType": "ADJUSTMENT"
+            }
+          }
+        },
+        "update_timeaccountdetail_for_sfodata": {
+          "description": "Update an entity in TimeAccountDetail EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "externalCode": "ADJ-001",
+              "bookingAmount": "1.50",
+              "bookingType": "ADJUSTMENT"
+            }
+          }
+        },
+        "get_timeaccountdetail_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the TimeAccountDetail collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        },
+        "list_timeaccount_for_sfodata": {
+          "description": "Retrieve a list of entities from the TimeAccount collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        },
+        "get_timeaccount_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the TimeAccount collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        },
+        "list_timeaccounttype_for_sfodata": {
+          "description": "Retrieve a list of entities from the TimeAccountType collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        },
+        "get_timeaccounttype_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the TimeAccountType collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        },
+        "list_accrualcalculationbase_for_sfodata": {
+          "description": "Retrieve a list of entities from the AccrualCalculationBase collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "ACCR-001",
+                  "timeAccountType": "VACATION",
+                  "accrualAmount": "1.50"
+                }
+              ]
+            }
+          }
+        },
+        "get_accrualcalculationbase_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the AccrualCalculationBase collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "ACCR-001",
+                  "timeAccountType": "VACATION",
+                  "accrualAmount": "1.50"
+                }
+              ]
+            }
+          }
+        },
+        "list_timetype_for_sfodata": {
+          "description": "Retrieve a list of entities from the TimeType collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION",
+                  "name": "Annual Leave",
+                  "unit": "DAY"
+                }
+              ]
+            }
+          }
+        },
+        "get_timetype_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the TimeType collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION",
+                  "name": "Annual Leave",
+                  "unit": "DAY"
+                }
+              ]
+            }
+          }
+        },
+        "list_timeaccountsnapshot_for_sfodata": {
+          "description": "Retrieve a list of entities from the TimeAccountSnapshot collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        },
+        "get_timeaccountsnapshot_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the TimeAccountSnapshot collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        },
+        "list_emptimeaccountbalance_for_sfodata": {
+          "description": "Retrieve a list of entities from the EmpTimeAccountBalance collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "externalCode": "mock-001"
+            }
+          }
+        },
+        "get_emptimeaccountbalance_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the EmpTimeAccountBalance collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "externalCode": "mock-001"
+            }
+          }
+        },
+        "list_employeetimecalendar_for_sfodata": {
+          "description": "Retrieve a list of entities from the EmployeeTimeCalendar collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "ABS-10045",
+                  "userId": "EMP10012",
+                  "timeType": "VACATION",
+                  "quantityInDays": "2.00",
+                  "status": "APPROVED"
+                }
+              ]
+            }
+          }
+        },
+        "get_employeetimecalendar_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the EmployeeTimeCalendar collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "ABS-10045",
+                  "userId": "EMP10012",
+                  "timeType": "VACATION",
+                  "quantityInDays": "2.00",
+                  "status": "APPROVED"
+                }
+              ]
+            }
+          }
+        },
+        "list_employeetime_for_sfodata": {
+          "description": "Retrieve a list of entities from the EmployeeTime collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "ABS-10045",
+                  "userId": "EMP10012",
+                  "timeType": "VACATION",
+                  "quantityInDays": "2.00",
+                  "status": "APPROVED"
+                }
+              ]
+            }
+          }
+        },
+        "create_employeetime_for_sfodata": {
+          "description": "Create a new instance of the EmployeeTime EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "externalCode": "ADJ-001",
+              "bookingAmount": "1.50",
+              "bookingType": "ADJUSTMENT"
+            }
+          }
+        },
+        "update_employeetime_for_sfodata": {
+          "description": "Update an entity in EmployeeTime EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "externalCode": "ADJ-001",
+              "bookingAmount": "1.50",
+              "bookingType": "ADJUSTMENT"
+            }
+          }
+        },
+        "get_employeetime_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the EmployeeTime collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "ABS-10045",
+                  "userId": "EMP10012",
+                  "timeType": "VACATION",
+                  "quantityInDays": "2.00",
+                  "status": "APPROVED"
+                }
+              ]
+            }
+          }
+        },
+        "list_timeaccountdetails_in_timeaccount_for_sfodata": {
+          "description": "Navigate from TimeAccount to related TimeAccountDetail entities via the 'timeAccountDetails' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "d": {
+              "results": [
+                {
+                  "externalCode": "VACATION-EMP10012-2024",
+                  "userId": "EMP10012",
+                  "bookableQuantity": "12.50"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_for_agent": "ec-time-account-diagnostics-agent",
+    "mock_mode": true,
+    "deterministic": true,
+    "total_servers": 4,
+    "total_tools": 32,
+    "generated_from": [
+      "translation.json"
+    ],
+    "generation_date": "2026-11-13"
+  }
+}

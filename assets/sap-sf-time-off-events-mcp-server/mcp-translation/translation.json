@@ -1,0 +1,116 @@
+{
+  "mcpTranslationVersion": "0.8",
+  "target": {
+    "ordId": "sap.sf:apiResource:TimeOffEvents:v1",
+    "type": "openapi-v3"
+  },
+  "serverInfo": {
+    "name": "sap.mcp/time_off_events",
+    "title": "time_off_events",
+    "version": "1.0.0",
+    "description": "MCP server for the time_off_events service."
+  },
+  "tools": [
+    {
+      "name": "GET_rest_timemanagement_absence_v1_events",
+      "title": "GET_rest_timemanagement_absence_v1_events",
+      "description": "The API provides a list of events (including active absences, public holidays, and non-working days) for the specified duration (up to a maximum of 12 months). It checks for relevant permissions, such as employee time view and workbench view. When there is no permission for employee time view, absences are excluded from the response. If no workbench view permission, the titles and approval status of absences are masked. The basic requirement is to have the \"Time Off\" or \"Leave of Absence\" feature enabled.",
+      "openApiType": {
+        "path": "/rest/timemanagement/absence/v1/events",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "assignmentId",
+            "description": "The assignmentUUID of the user for whom the events are retrieved. It also accepts the userId, but using assignmentUUID is recommended.",
+            "in": "query",
+            "newParameterName": "assignmentid"
+          },
+          {
+            "name": "types",
+            "description": "The types of events to be retrieved. Multiple types can be specified in a comma-separated format.",
+            "in": "query",
+            "newParameterName": "types"
+          },
+          {
+            "name": "startDate",
+            "description": "Events from this date will be retrieved. The date must be in the format YYYY-MM-DD.",
+            "in": "query",
+            "newParameterName": "startdate"
+          },
+          {
+            "name": "endDate",
+            "description": "Events until this date will be retrieved. The date must be in the format YYYY-MM-DD.",
+            "in": "query",
+            "newParameterName": "enddate"
+          },
+          {
+            "name": "includePartialDayAbsences",
+            "description": "Whether to include partial-day absences in the response. By default these absences are excluded.",
+            "in": "query",
+            "newParameterName": "includepartialdayabsences"
+          },
+          {
+            "name": "excludeAbsencesStartingBeforeSelectionPeriod",
+            "description": "Whether to exclude absences with a start date before the specified start date. By default, active absences within the selection period are retrieved.",
+            "in": "query",
+            "newParameterName": "excludeabsencesstartingbeforeselectionperiod"
+          },
+          {
+            "name": "absenceStatus",
+            "description": "The status of absences to be retrieved. Multiple statuses can be specified in a comma-separated format. If not specified, the default absences (PENDING, APPROVED, PENDING_CANCELLATION) are retrieved.",
+            "in": "query",
+            "newParameterName": "absencestatus"
+          },
+          {
+            "name": "$top",
+            "description": "The maximum number of events to return in the response.",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "The number of events to skip before beginning to return events in the response.",
+            "in": "query",
+            "newParameterName": "skip"
+          }
+        ],
+        "requestBody": {},
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: ec-time-account-diagnostics-25342
+  version: 1.0.0
+  description: AI agent that diagnoses SAP SuccessFactors Employee Central time account issues by tracing accrual postings, absences, and manual adjustments, then suggests and applies approved fixes with human approval.
+
+assets:
+  - ref: ./assets/ec-time-account-diagnostics-agent/asset.yaml
+  - ref: ./assets/sap-sf-balances-mcp-server/asset.yaml
+  - ref: ./assets/sap-sf-time-off-events-mcp-server/asset.yaml
+  - ref: ./assets/sap-sf-available-time-types-mcp-server/asset.yaml
+  - ref: ./assets/sap-sf-ec-time-off-mcp-server/asset.yaml

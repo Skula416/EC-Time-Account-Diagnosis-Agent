@@ -1,0 +1,2201 @@
+{
+  "mcpTranslationVersion": "0.8",
+  "target": {
+    "ordId": "sap.sf:apiResource:ECTimeOff:v1",
+    "type": "edmx"
+  },
+  "serverInfo": {
+    "name": "sap.mcp/sfodata",
+    "title": "sfodata",
+    "version": "1.0.0",
+    "description": "MCP server for the sfodata service."
+  },
+  "tools": [
+    {
+      "name": "get_metadata_sfodata",
+      "title": "get_metadata_sfodata",
+      "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+      "odataType": {
+        "metadataRequest": {},
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "batch_for_sfodata",
+      "title": "batch_for_sfodata",
+      "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+      "odataType": {
+        "batchRequest": {},
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "list_timeaccountpostingrule_for_sfodata",
+      "title": "list_TimeAccountPostingRule_for_sfodata",
+      "description": "Retrieve a list of entities from the TimeAccountPostingRule collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccountPostingRule",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_timeaccountpostingrule_for_sfodata",
+      "title": "get_TimeAccountPostingRule_for_sfodata",
+      "description": "Retrieve a single entity by its key from the TimeAccountPostingRule collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccountPostingRule",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "TimeType_externalCode",
+              "newParameterName": "timetype_externalcode"
+            },
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_timeaccountdetail_for_sfodata",
+      "title": "list_TimeAccountDetail_for_sfodata",
+      "description": "Retrieve a list of entities from the TimeAccountDetail collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccountDetail",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "create_timeaccountdetail_for_sfodata",
+      "title": "create_TimeAccountDetail_for_sfodata",
+      "description": "Create a new instance of the TimeAccountDetail EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccountDetail",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "TimeAccount_externalCode",
+              "newParameterName": "timeaccount_externalcode"
+            },
+            {
+              "name": "accrualPeriodId",
+              "newParameterName": "accrualperiodid"
+            },
+            {
+              "name": "bookingAmount",
+              "newParameterName": "bookingamount"
+            },
+            {
+              "name": "bookingDate",
+              "newParameterName": "bookingdate"
+            },
+            {
+              "name": "bookingType",
+              "newParameterName": "bookingtype"
+            },
+            {
+              "name": "bookingUnit",
+              "newParameterName": "bookingunit"
+            },
+            {
+              "name": "calendarEntry",
+              "newParameterName": "calendarentry"
+            },
+            {
+              "name": "changeCalendar",
+              "newParameterName": "changecalendar"
+            },
+            {
+              "name": "comment",
+              "newParameterName": "comment"
+            },
+            {
+              "name": "employeeTime",
+              "newParameterName": "employeetime"
+            },
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "periodicUpdatePeriodId",
+              "newParameterName": "periodicupdateperiodid"
+            },
+            {
+              "name": "referenceObject",
+              "newParameterName": "referenceobject"
+            },
+            {
+              "name": "calendarEntryNav",
+              "newParameterName": "calendarentrynav"
+            },
+            {
+              "name": "employeeTimeNav",
+              "newParameterName": "employeetimenav"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "update_timeaccountdetail_for_sfodata",
+      "title": "update_TimeAccountDetail_for_sfodata",
+      "description": "Update an entity in TimeAccountDetail EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccountDetail",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "TimeAccount_externalCode",
+              "newParameterName": "timeaccount_externalcode"
+            },
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "accrualPeriodId",
+              "newParameterName": "accrualperiodid"
+            },
+            {
+              "name": "bookingAmount",
+              "newParameterName": "bookingamount"
+            },
+            {
+              "name": "bookingDate",
+              "newParameterName": "bookingdate"
+            },
+            {
+              "name": "bookingType",
+              "newParameterName": "bookingtype"
+            },
+            {
+              "name": "bookingUnit",
+              "newParameterName": "bookingunit"
+            },
+            {
+              "name": "calendarEntry",
+              "newParameterName": "calendarentry"
+            },
+            {
+              "name": "changeCalendar",
+              "newParameterName": "changecalendar"
+            },
+            {
+              "name": "comment",
+              "newParameterName": "comment"
+            },
+            {
+              "name": "employeeTime",
+              "newParameterName": "employeetime"
+            },
+            {
+              "name": "periodicUpdatePeriodId",
+              "newParameterName": "periodicupdateperiodid"
+            },
+            {
+              "name": "referenceObject",
+              "newParameterName": "referenceobject"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "get_timeaccountdetail_for_sfodata",
+      "title": "get_TimeAccountDetail_for_sfodata",
+      "description": "Retrieve a single entity by its key from the TimeAccountDetail collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccountDetail",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "TimeAccount_externalCode",
+              "newParameterName": "timeaccount_externalcode"
+            },
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_timeaccount_for_sfodata",
+      "title": "list_TimeAccount_for_sfodata",
+      "description": "Retrieve a list of entities from the TimeAccount collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccount",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_timeaccount_for_sfodata",
+      "title": "get_TimeAccount_for_sfodata",
+      "description": "Retrieve a single entity by its key from the TimeAccount collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccount",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_timeaccounttype_for_sfodata",
+      "title": "list_TimeAccountType_for_sfodata",
+      "description": "Retrieve a list of entities from the TimeAccountType collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccountType",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_timeaccounttype_for_sfodata",
+      "title": "get_TimeAccountType_for_sfodata",
+      "description": "Retrieve a single entity by its key from the TimeAccountType collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccountType",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_accrualcalculationbase_for_sfodata",
+      "title": "list_AccrualCalculationBase_for_sfodata",
+      "description": "Retrieve a list of entities from the AccrualCalculationBase collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "AccrualCalculationBase",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_accrualcalculationbase_for_sfodata",
+      "title": "get_AccrualCalculationBase_for_sfodata",
+      "description": "Retrieve a single entity by its key from the AccrualCalculationBase collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "AccrualCalculationBase",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_timetype_for_sfodata",
+      "title": "list_TimeType_for_sfodata",
+      "description": "Retrieve a list of entities from the TimeType collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeType",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_timetype_for_sfodata",
+      "title": "get_TimeType_for_sfodata",
+      "description": "Retrieve a single entity by its key from the TimeType collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeType",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_timeaccountsnapshot_for_sfodata",
+      "title": "list_TimeAccountSnapshot_for_sfodata",
+      "description": "Retrieve a list of entities from the TimeAccountSnapshot collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccountSnapshot",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_timeaccountsnapshot_for_sfodata",
+      "title": "get_TimeAccountSnapshot_for_sfodata",
+      "description": "Retrieve a single entity by its key from the TimeAccountSnapshot collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccountSnapshot",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_emptimeaccountbalance_for_sfodata",
+      "title": "list_EmpTimeAccountBalance_for_sfodata",
+      "description": "Retrieve a list of entities from the EmpTimeAccountBalance collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "EmpTimeAccountBalance",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_emptimeaccountbalance_for_sfodata",
+      "title": "get_EmpTimeAccountBalance_for_sfodata",
+      "description": "Retrieve a single entity by its key from the EmpTimeAccountBalance collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "EmpTimeAccountBalance",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "timeAccount",
+              "newParameterName": "timeaccount"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_employeetimecalendar_for_sfodata",
+      "title": "list_EmployeeTimeCalendar_for_sfodata",
+      "description": "Retrieve a list of entities from the EmployeeTimeCalendar collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "EmployeeTimeCalendar",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_employeetimecalendar_for_sfodata",
+      "title": "get_EmployeeTimeCalendar_for_sfodata",
+      "description": "Retrieve a single entity by its key from the EmployeeTimeCalendar collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "EmployeeTimeCalendar",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "EmployeeTime_externalCode",
+              "newParameterName": "employeetime_externalcode"
+            },
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_employeetime_for_sfodata",
+      "title": "list_EmployeeTime_for_sfodata",
+      "description": "Retrieve a list of entities from the EmployeeTime collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "EmployeeTime",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "create_employeetime_for_sfodata",
+      "title": "create_EmployeeTime_for_sfodata",
+      "description": "Create a new instance of the EmployeeTime EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "EmployeeTime",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "approvalStatus",
+              "newParameterName": "approvalstatus"
+            },
+            {
+              "name": "comment",
+              "newParameterName": "comment"
+            },
+            {
+              "name": "endDate",
+              "newParameterName": "enddate"
+            },
+            {
+              "name": "endTime",
+              "newParameterName": "endtime"
+            },
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "fractionQuantity",
+              "newParameterName": "fractionquantity"
+            },
+            {
+              "name": "loaActualReturnDate",
+              "newParameterName": "loaactualreturndate"
+            },
+            {
+              "name": "loaEndJobInfoId",
+              "newParameterName": "loaendjobinfoid"
+            },
+            {
+              "name": "loaExpectedReturnDate",
+              "newParameterName": "loaexpectedreturndate"
+            },
+            {
+              "name": "loaStartJobInfoId",
+              "newParameterName": "loastartjobinfoid"
+            },
+            {
+              "name": "recurrenceGroup",
+              "newParameterName": "recurrencegroup"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "startTime",
+              "newParameterName": "starttime"
+            },
+            {
+              "name": "timeRecordOrigin",
+              "newParameterName": "timerecordorigin"
+            },
+            {
+              "name": "timeType",
+              "newParameterName": "timetype"
+            },
+            {
+              "name": "undeterminedEndDate",
+              "newParameterName": "undeterminedenddate"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "countryExtensionAUS",
+              "newParameterName": "countryextensionaus"
+            },
+            {
+              "name": "countryExtensionCAN",
+              "newParameterName": "countryextensioncan"
+            },
+            {
+              "name": "countryExtensionCOL",
+              "newParameterName": "countryextensioncol"
+            },
+            {
+              "name": "countryExtensionDEU",
+              "newParameterName": "countryextensiondeu"
+            },
+            {
+              "name": "countryExtensionESP",
+              "newParameterName": "countryextensionesp"
+            },
+            {
+              "name": "countryExtensionMEX",
+              "newParameterName": "countryextensionmex"
+            },
+            {
+              "name": "countryExtensionNLD",
+              "newParameterName": "countryextensionnld"
+            },
+            {
+              "name": "countryExtensionPOL",
+              "newParameterName": "countryextensionpol"
+            },
+            {
+              "name": "countryExtensionUSA",
+              "newParameterName": "countryextensionusa"
+            },
+            {
+              "name": "recurrenceGroupNav",
+              "newParameterName": "recurrencegroupnav"
+            },
+            {
+              "name": "timeCalendar",
+              "newParameterName": "timecalendar"
+            },
+            {
+              "name": "timeTypeNav",
+              "newParameterName": "timetypenav"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "update_employeetime_for_sfodata",
+      "title": "update_EmployeeTime_for_sfodata",
+      "description": "Update an entity in EmployeeTime EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "EmployeeTime",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "approvalStatus",
+              "newParameterName": "approvalstatus"
+            },
+            {
+              "name": "comment",
+              "newParameterName": "comment"
+            },
+            {
+              "name": "endDate",
+              "newParameterName": "enddate"
+            },
+            {
+              "name": "endTime",
+              "newParameterName": "endtime"
+            },
+            {
+              "name": "fractionQuantity",
+              "newParameterName": "fractionquantity"
+            },
+            {
+              "name": "loaActualReturnDate",
+              "newParameterName": "loaactualreturndate"
+            },
+            {
+              "name": "loaEndJobInfoId",
+              "newParameterName": "loaendjobinfoid"
+            },
+            {
+              "name": "loaExpectedReturnDate",
+              "newParameterName": "loaexpectedreturndate"
+            },
+            {
+              "name": "loaStartJobInfoId",
+              "newParameterName": "loastartjobinfoid"
+            },
+            {
+              "name": "recurrenceGroup",
+              "newParameterName": "recurrencegroup"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "startTime",
+              "newParameterName": "starttime"
+            },
+            {
+              "name": "timeRecordOrigin",
+              "newParameterName": "timerecordorigin"
+            },
+            {
+              "name": "timeType",
+              "newParameterName": "timetype"
+            },
+            {
+              "name": "undeterminedEndDate",
+              "newParameterName": "undeterminedenddate"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "get_employeetime_for_sfodata",
+      "title": "get_EmployeeTime_for_sfodata",
+      "description": "Retrieve a single entity by its key from the EmployeeTime collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "EmployeeTime",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_timeaccountdetails_in_timeaccount_for_sfodata",
+      "title": "list_timeAccountDetails_in_TimeAccount_for_sfodata",
+      "description": "Navigate from TimeAccount to related TimeAccountDetail entities via the 'timeAccountDetails' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "TimeAccount",
+          "navigationProperty": {
+            "name": "timeAccountDetails",
+            "crudOperation": "read",
+            "parameters": [
+              {
+                "name": "filter"
+              },
+              {
+                "name": "select"
+              },
+              {
+                "name": "orderby"
+              },
+              {
+                "name": "top"
+              },
+              {
+                "name": "skip"
+              },
+              {
+                "name": "expand"
+              },
+              {
+                "name": "inlinecount"
+              }
+            ]
+          },
+          "parameters": [
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    }
+  ]
+}
